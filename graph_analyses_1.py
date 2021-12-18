@@ -7,6 +7,7 @@ def read_graph(path_to_file, type):
     :param type: if type == 0, graph is oriented, if type == 1, graph is not oriented 
     :return: set of tuples
     """
+    final_set=set()
     new_set = set()
     with open(path_to_file, 'r') as file:
         for line in file:
