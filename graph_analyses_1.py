@@ -4,7 +4,7 @@ type = input("(0/1): ")
 def read_graph(path_to_file, type):
     """
     :param path_to_file:
-    :param type: if type == 0, graph is oriented, if type == 1, graph is not oriented
+    :param type: if type == 0, graph is oriented, if type == 1, graph is not oriented 
     :return: set of tuples
     """
     new_set = set()
