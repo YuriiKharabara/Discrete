@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 def add_edge(graph, s, d):
-    graph[s].append(d)
+    graph[s].add(d)
     # dfs
 
 def dfs(graph, d, visited_vertex):
@@ -23,7 +23,7 @@ def fill_order(graph, d, visited_vertex, stack):
 
     # transpose the matrix
 def transpose(graph):
-    g = defaultdict(list)
+    g = defaultdict(set)
 
     for i in graph:
         for j in graph[i]:
@@ -51,16 +51,17 @@ def kosaraju_scc(graph, vert_counter):
     return scc
 
 
-g = defaultdict(list)
+g = defaultdict(set)
 add_edge(g, 0, 1)
 add_edge(g, 1, 2)
-add_edge(g, 2, 3)
 add_edge(g, 2, 4)
+add_edge(g, 2, 3)
 add_edge(g, 3, 0)
 add_edge(g, 4, 5)
 add_edge(g, 5, 6)
-add_edge(g, 6, 4)
 add_edge(g, 6, 7)
+add_edge(g, 6, 4)
 
-print("Strongly Connected Components:")
+#print(g)
+#print("Strongly Connected Components:")
 print(kosaraju_scc(g, 8))
