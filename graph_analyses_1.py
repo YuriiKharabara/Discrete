@@ -45,3 +45,8 @@ def read_graph(path_to_file, type, project):
         return four
     elif project == 5:
         return five
+# print(read_graph(r'new.csv', 0, 3))
+# print(read_graph(r'new.csv', 0, 4))
+# print(read_graph(r'new.csv', 1, 4))
+# print(read_graph(r'new.csv', 0, 5))
+# print(read_graph(r'new.csv', 1, 5))
