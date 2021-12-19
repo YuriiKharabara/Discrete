@@ -1,17 +1,3 @@
-def read_graph(path_to_file, type):
-    pass
-
-def write_file(file_path):
-    pass
-
-
-def component(graph):
-    pass
-
-
-def strongly_connected_component(graph):
-    pass
-
 def dfs(graph, start, d=[], h=[], ch=0, visited=None, p=-1, root=0, articulation_poins=set()):
     if visited is None:
         visited = set()
@@ -35,3 +21,9 @@ def dfs(graph, start, d=[], h=[], ch=0, visited=None, p=-1, root=0, articulation
         articulation_poins.add(0)
         
     return articulation_poins
+
+
+# graph = [[2, 4, 5], [4, 5], [0, 3, 4], [6, 7, 2], 
+#     [5, 2, 0], [0, 1, 4], [7, 8, 3], [3, 6, 8], [6, 7]]
+graph=[[2,1,5],[0,2,5], [3,4,1,0], [2],[2],[0,1,6,7],[5],[5]]
+print(dfs(graph, 0, [0]*len(graph), [0]*len(graph)))

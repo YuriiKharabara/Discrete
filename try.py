@@ -1,20 +1,14 @@
-# def dfs(graph, start, visited=None, parent=[], articulation_points=set()):
-#     if visited is None:
-#         visited = set()
-#     visited.add(start)
-#     print(start)
-#     for next in graph[start] - visited:
-#         dfs(graph, next, visited, articulation_points)
-#     return visited
-def dfs(graph, start, visited=None):
+def dfs(graph, start, visited=None,used=[[0]]):
     if visited is None:
         visited = set()     
     visited.add(start)
+    used.append(start)
     print(start)
     for next in graph[start] - visited:
         dfs(graph, next, visited)
     return visited
- 
+
+
 
 
 
