@@ -20,6 +20,11 @@ def dfs(at, graph, stack, on_stack, ids, low, ident, comps):
         comps.append(min(curr))
 
 def tarjan_scc(n, graph):
+    '''
+    Finds strongly connected components in graph
+    >>> tarjan_scc(9, [[], [2], [3], [1], [5, 8], [6], [1, 7], [1, 5, 3], [4, 6]])
+    [1, 5, 4]
+    '''
     # try:
     ids = [-1] * n
     low = [-1] * n
@@ -31,6 +36,7 @@ def tarjan_scc(n, graph):
     for i in range(n):
         if ids[i] == -1:
             dfs(i, graph, stack, on_stack, ids, low, ident, comps)
+    comps.remove(0)
     return comps
     # except:
     #     return 'incorrect input data'
@@ -38,3 +44,5 @@ def tarjan_scc(n, graph):
 # graph = [[1], [2], [0], [4, 7], [5], [0, 6], [0, 4, 2], [3, 5]]
 # n = 8
 # print(tarjan_scc(n, graph))
+# import doctest
+# doctest.testmod()
