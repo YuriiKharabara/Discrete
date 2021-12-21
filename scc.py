@@ -20,6 +20,7 @@ def dfs(at, graph, stack, on_stack, ids, low, ident, comps):
         comps.append(min(curr))
 
 def tarjan_scc(n, graph):
+    # try:
     ids = [-1] * n
     low = [-1] * n
     on_stack = [False] * n
@@ -31,6 +32,8 @@ def tarjan_scc(n, graph):
         if ids[i] == -1:
             dfs(i, graph, stack, on_stack, ids, low, ident, comps)
     return comps
+    # except:
+    #     return 'incorrect input data'
 
 # graph = [[1], [2], [0], [4, 7], [5], [0, 6], [0, 4, 2], [3, 5]]
 # n = 8
