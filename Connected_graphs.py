@@ -82,7 +82,6 @@ def connected_component(grahp_dict: dict):
     """
     keys = grahp_dict.keys()
     total_res = []
-    part = []
     visited = None
     counter = 0
     for i in keys:
